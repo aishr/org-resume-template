@@ -1,0 +1,111 @@
+#+TITLE:
+#+AUTHOR: 
+#+DATE:
+# !!EXPORT FILE NAME!!
+#+EXPORT_FILE_NAME: template
+
+#+OPTIONS: toc:nil num:nil
+#+STARTUP: latexpreview
+#+LATEX_HEADER: \usepackage[compact]{titlesec}
+#+LATEX_HEADER: \usepackage[margin=0.5cm]{geometry}
+#+LATEX_HEADER: \usepackage{enumitem}
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \usepackage[x11names]{xcolor}
+#+LATEX_HEADER: \usepackage{multicol}
+#+LATEX_HEADER: \newcolumntype{L}{>{\raggedright}p{0.165\textwidth}}
+#+LATEX_HEADER: \newcolumntype{R}{p{0.92\textwidth}}
+#+LATEX_HEADER: \newcolumntype{E}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+#+LATEX_HEADER: \newcolumntype{X}{>{\raggedright}p{0.07\textwidth}}
+#+LATEX_HEADER: \newcolumntype{Y}{p{0.92\textwidth}}
+
+# !!ACCENT COLOUR!!
+#+LATEX_HEADER:\definecolor{mycolour}{RGB}{38,169,163}
+
+# !!CUSTOM BULLETS WITH ACCENT COLOUR!!
+#+LATEX_HEADER: \setlist[itemize]{label=\textcolor{mycolour}{\rhd}}
+
+#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+
+# !!SETS LINK COLOUR!! 
+#+LATEX_HEADER: \hypersetup{linktoc = all, colorlinks = true, urlcolor = DodgerBlue4, citecolor = PaleGreen1, linkcolor = blue}
+
+# !!CUSTOM MACROS!!
+#+MACRO: subtitle @@latex:{\color{mycolour}@@-- $1 --@@latex:}@@
+#+MACRO: maintitle @@latex:{\color{mycolour}@@$1@@latex:}@@
+#+MACRO: link [[$1]] [[$2][$3]] \space\space\space\space\space\space
+
+#+BEGIN_Huge
+*{{{maintitle(JANE DOE)}}}*
+#+END_Huge
+
+\medskip
+
+SUBTITLE
+
+\medskip
+
+#+ATTR_LATEX: :width 0.4cm :center 
+{{{link(./images/envelope.png,mailto:jame@example.com, jane@example.com)}}}
+#+ATTR_LATEX: :width 0.4cm :center 
+{{{link(./images/house.png,https://jane.website.com,jane.website.com)}}}
+#+ATTR_LATEX: :width 0.4cm :center 
+{{{link(./images/github.png,https://github.com/janedoegithub, janedoegithub)}}}
+#+ATTR_LATEX: :width 0.4cm :center 
+{{{link(./images/linkedin.png,https://www.linkedin.com/in/janedoeli/,janedoeli)}}}
+#+ATTR_LATEX: :thickness 0.8pt :textcolor \color{mycolour}
+     -----
+* {{{subtitle(SUBHEADING 1 (Ex. Education))}}}
+  #+ATTR_LATEX: :environment tabular :align L R :center nil
+  #+ATTR_HTML: :frame void :cellpadding 3
+  |     2019-- | Degree      |
+  |            | School      |
+  |            | description |
+  |            |             |
+  | 2014--2019 | Degree      |
+  |            | School      |
+  |            | description |
+* {{{subtitle(SUBHEADING 2 (Ex. Experience))}}}
+  #+ATTR_LATEX: :environment tabular :align L R :center nil
+  #+ATTR_HTML: :frame void :cellpadding 3
+  | Sep 2019--         | Title       |
+  |                    | Place       |
+  |                    |             |
+  | Sep 2016--May 2019 | Title       |
+  |                    | Place       |
+  |                    |             |
+  | May 2017--Aug 2018 | Title       |
+  |                    | Place       |
+  |                    | description |
+  |                    | description |
+* {{{subtitle(SUBHEADING 3 (Ex. Publications))}}}
+  #+ATTR_LATEX: :options [noitemsep]
+  - Author, A., Author, B. Title. Conference (Journal).[[https://google.com][Link]]
+* {{{subtitle(SUBHEADING 4)}}}
+** TITLE [[[https://github.com][Source]]]
+   - description
+** TITLE 
+   - description
+   - description
+* {{{subtitle(SUBHEADING 5 (Ex. Projects))}}}
+
+# COLUMNS ARE OPTIONAL
+# REMOVE LINE BELOW TO GET RID OF COLUMNS
+\begin{multicols}{2}
+** TITLE
+   - description
+   - description
+   - description
+
+# TO BALANCE COLUMNS
+   \bigskip
+   \bigskip
+   \bigskip
+** TITLE
+   - description
+   - description
+   - description
+   - description
+   - description
+   - description
+# REMOVE LINE BELOW TO GET RID OF COLUMNS
+\end{multicols}
