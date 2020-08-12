@@ -1,0 +1,7 @@
+#+TITLE: ORG Resume Template
+
+- written in org with customizations for latex export
+- TODO: customizations for html export
+ 
+* Usage
+  - go into template.org and fill in according to your preferences
